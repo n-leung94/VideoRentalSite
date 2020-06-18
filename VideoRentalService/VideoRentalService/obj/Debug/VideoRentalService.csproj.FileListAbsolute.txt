@@ -214,3 +214,5 @@ C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalSer
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.AddMembershipType.resources
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.PopulateMembershipTypes.resources
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.ApplyAnnotationsToCustomerName.resources
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.addNameToMembershipType.resources
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.populateNamesInMembershipTypes.resources
