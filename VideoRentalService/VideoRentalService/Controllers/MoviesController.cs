@@ -5,11 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using VideoRentalService.Models;
 using VideoRentalService.ViewModels;
+using System.Data.Entity;
 
 namespace VideoRentalService.Controllers
 {
     public class MoviesController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
         // GET: Movies/Random in URL
         public ActionResult Random()
         {
@@ -53,7 +61,7 @@ namespace VideoRentalService.Controllers
         // ? means nullable
         public ActionResult Index(int? pageIndex, string sortBy)
         {
-
+            /*
             // Handling default values if none are specified
             if (!pageIndex.HasValue)
                 pageIndex = 1;
@@ -62,6 +70,20 @@ namespace VideoRentalService.Controllers
                 sortBy = "Name";
 
             return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
+            */
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
+
+            return View(movies);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(c => c.Id == id);
+
+            if (movie == null)
+                return HttpNotFound();
+
+            return View(movie);
         }
     }
 }
