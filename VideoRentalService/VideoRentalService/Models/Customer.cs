@@ -16,5 +16,6 @@ namespace VideoRentalService.Models
         public bool IsSubscribedToNewsletter { get; set; }
         public MembershipType MembershipType { get; set; }
         public byte MembershipTypeId { get; set; } // Foreign Key to find the correct ID from Membership Type to apply to the customer when needed.
+        public DateTime? Birthdate { get; set; }
     }
 }

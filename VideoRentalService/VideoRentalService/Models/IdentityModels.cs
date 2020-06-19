@@ -22,6 +22,7 @@ namespace VideoRentalService.Models
     {
         // Represents our Customer Class as a table in the database
         public DbSet<Customer> Customers { get; set; }
+        public DbSet <Movie> Movies { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
