@@ -219,3 +219,4 @@ C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalSer
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.addBirthdateToCustomerTable.resources
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.addGenreAndMoviesTable.resources
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.populateGenreTypes.resources
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.mandatoryNameinMovie.resources
