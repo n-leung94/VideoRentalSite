@@ -33,6 +33,7 @@ namespace VideoRentalService.Controllers
 
             var viewModel = new CustomerFormViewModel
             {
+                Customer = new Customer(),
                 MembershipTypes = membershipTypes
             };
             // While we could pass membership types to return View() it won't work when editing a customer later as we also need to reference customer object
@@ -43,8 +44,21 @@ namespace VideoRentalService.Controllers
 
         
         [HttpPost]  // Ensure this action can only be done from HttpPost instead of get
+        [ValidateAntiForgeryToken] // Prevents Cross Site Attacks, Enable it on respective forms using @Html.AntiForgeryToken()
         public ActionResult Save(Customer customer) // customer as an argument that will be passed to this action once a user keys in a new customer for processing, C# knows how to process the parameters from the form to single customer class rather than the view model.
         {
+            // If user input on the form is invalid, throw back form with existing details filled in
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+
+                return View("CustomerForm", viewModel);
+            }
+
             // Since this action can either be called from New Customer or Edit Customer as they are using same Form View, we need to differentiate.
             if (customer.Id == 0)
             {

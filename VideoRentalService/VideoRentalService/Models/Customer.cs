@@ -11,7 +11,7 @@ namespace VideoRentalService.Models
         public int Id { get; set; }
 
         // Required marks for the database migration that the name shouldn't be nullable when transforming it to table attributes. requires System.ComponentModel.DataAnnotations
-        [Required]
+        [Required(ErrorMessage = "Please enter customer's name.")]
         [StringLength(255)]
         public string Name { get; set; }
 
@@ -25,6 +25,7 @@ namespace VideoRentalService.Models
 
 
         [Display(Name = "Date Of Birth")]
+        [Min18YearsIfAMember]  //Custom Validation to ensure customer is 18YO, refer to Min18YearsIfAMember.cs
         public DateTime? Birthdate { get; set; }
     }
 }
