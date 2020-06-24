@@ -220,3 +220,11 @@ C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalSer
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.addGenreAndMoviesTable.resources
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.populateGenreTypes.resources
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.mandatoryNameinMovie.resources
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\bin\System.Net.Http.Formatting.dll
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\bin\System.Web.Http.dll
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\bin\System.Web.Http.WebHost.dll
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\bin\System.Net.Http.Formatting.xml
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\bin\System.Web.Http.xml
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\bin\System.Web.Http.WebHost.xml
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\bin\AutoMapper.dll
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\bin\AutoMapper.xml
