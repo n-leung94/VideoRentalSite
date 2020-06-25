@@ -82,8 +82,8 @@ namespace VideoRentalService.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();  // Fetches all customers in DB as list , Include Statement is needed as Membership Type is a different data object "Eager Loading"
-            return View(customers);
+            // var customers = _context.Customers.Include(c => c.MembershipType).ToList();  // Fetches all customers in DB as list , Include Statement is needed as Membership Type is a different data object "Eager Loading", DEPRECATED
+            return View();
         }
 
         public ActionResult Details(int id)

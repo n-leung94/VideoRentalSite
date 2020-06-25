@@ -21,6 +21,8 @@ namespace VideoRentalService.Dtos
 
         public byte MembershipTypeId { get; set; } 
 
+        public MembershipTypeDto MembershipType { get; set; }
+
 
         // [Min18YearsIfAMember]  - The Model for this custom validation casts (customer) object while this is a customerDto object hence it cannot be applied.
         public DateTime? Birthdate { get; set; }

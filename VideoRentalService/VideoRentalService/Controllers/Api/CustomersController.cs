@@ -7,6 +7,7 @@ using System.Web.Http;
 using VideoRentalService.Models;
 using VideoRentalService.Dtos;
 using AutoMapper;
+using System.Data.Entity;
 
 
 // API to return different types of customer requests when called for.
@@ -26,7 +27,10 @@ namespace VideoRentalService.Controllers.Api
         // GET /api/customers
         public IEnumerable<CustomerDto> GetCustomers()
         {
-            return _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);  
+            return _context.Customers
+                .Include(c => c.MembershipType)
+                .ToList()
+                .Select(Mapper.Map<Customer, CustomerDto>);  
 
         }
 
