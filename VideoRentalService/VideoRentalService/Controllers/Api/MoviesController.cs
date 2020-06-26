@@ -7,6 +7,7 @@ using System.Web.Http;
 using VideoRentalService.Models;
 using VideoRentalService.Dtos;
 using AutoMapper;
+using System.Data.Entity;
 
 namespace VideoRentalService.Controllers.Api
 {
@@ -23,7 +24,10 @@ namespace VideoRentalService.Controllers.Api
         // GET/api/Movies
         public IEnumerable<MovieDto> GetMovies()
         {
-            return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
+            return _context.Movies
+                .Include(m => m.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>);
         }
 
         // Get Movie by ID
