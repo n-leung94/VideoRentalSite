@@ -52,6 +52,7 @@ namespace VideoRentalService.Controllers
 
 
         // GET: Movies/edit/id arg
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
@@ -69,6 +70,7 @@ namespace VideoRentalService.Controllers
         }
 
         // Add a New Movie
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New ()
         {
             var genres = _context.Genres.ToList();
@@ -118,9 +120,11 @@ namespace VideoRentalService.Controllers
         // ? means nullable
         public ActionResult Index()
         {
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
 
-
-            return View();
+            else
+                return View("ReadOnlyList");
         }
 
         public ActionResult Details(int id)

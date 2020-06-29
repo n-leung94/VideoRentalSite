@@ -228,3 +228,7 @@ C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalSer
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\bin\System.Web.Http.WebHost.xml
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\bin\AutoMapper.dll
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\bin\AutoMapper.xml
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.SeedUsers.resources
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.AddDrivingLicenseToApplicationUser.resources
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.addPhoneNumberToRegistration.resources
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.rollbackPhoneNumber.resources

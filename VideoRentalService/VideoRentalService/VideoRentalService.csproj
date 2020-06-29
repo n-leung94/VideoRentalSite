@@ -240,6 +240,22 @@
     <Compile Include="Migrations\202006231127382_mandatoryNameinMovie.Designer.cs">
       <DependentUpon>202006231127382_mandatoryNameinMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006261118313_SeedUsers.cs" />
+    <Compile Include="Migrations\202006261118313_SeedUsers.Designer.cs">
+      <DependentUpon>202006261118313_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006261325374_AddDrivingLicenseToApplicationUser.cs" />
+    <Compile Include="Migrations\202006261325374_AddDrivingLicenseToApplicationUser.Designer.cs">
+      <DependentUpon>202006261325374_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006290746554_addPhoneNumberToRegistration.cs" />
+    <Compile Include="Migrations\202006290746554_addPhoneNumberToRegistration.Designer.cs">
+      <DependentUpon>202006290746554_addPhoneNumberToRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006290810236_rollbackPhoneNumber.cs" />
+    <Compile Include="Migrations\202006290810236_rollbackPhoneNumber.Designer.cs">
+      <DependentUpon>202006290810236_rollbackPhoneNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -249,6 +265,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
@@ -491,10 +508,11 @@
     <Content Include="Views\Test\Test.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
-    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\List.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
+    <Content Include="Views\Movies\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -545,6 +563,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006231127382_mandatoryNameinMovie.resx">
       <DependentUpon>202006231127382_mandatoryNameinMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006261118313_SeedUsers.resx">
+      <DependentUpon>202006261118313_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006261325374_AddDrivingLicenseToApplicationUser.resx">
+      <DependentUpon>202006261325374_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006290746554_addPhoneNumberToRegistration.resx">
+      <DependentUpon>202006290746554_addPhoneNumberToRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006290810236_rollbackPhoneNumber.resx">
+      <DependentUpon>202006290810236_rollbackPhoneNumber.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
