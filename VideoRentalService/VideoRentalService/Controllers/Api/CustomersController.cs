@@ -26,7 +26,8 @@ namespace VideoRentalService.Controllers.Api
         
         // For AutoComplete Purposes
         public IHttpActionResult GetCustomers(string query = null)
-        {
+        {         
+
             var customerQuery = _context.Customers
                 .Include(c => c.MembershipType);
 
