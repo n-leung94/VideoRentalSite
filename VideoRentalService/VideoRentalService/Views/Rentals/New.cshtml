@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "New Rental Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Rental Form</h2>
+<form id="newRental">
+    <div class="form-group">
+        <label>Customer</label>
+        <div class="tt-container">
+            <input id="customer" name="customer" data-rule-validCustomer="true" required type="text" value="" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Movie</label>
+        <div class="tt-container">
+            <input id="movie" name="movie" data-rule-atLeastOneMovie="true" type="text" value="" class="form-control" />
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <ul id="movies" class="list-group"></ul>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary">Submit</button>
+</form>
+
+@section scripts
+{
+    @*Not part of lib, we only render it on pages we want validation in.*@
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+
+            var viewmodel = {
+                movieIds: []
+            };
+
+            var customers = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/customers?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#customer').typeahead({
+                minLength: 3,
+                highlight: true
+            }, {
+                name: 'customers',
+                display: 'name',
+                source: customers
+            }).on("typeahead:select", function (event, customer) {
+                viewmodel.customerId = customer.id;
+            });
+
+            var movies = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/movies?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#movie').typeahead({
+                minLength: 3,
+                highlight: true
+            }, {
+                name: 'movies',
+                display: 'name',
+                source: movies
+            }).on("typeahead:select", function (event, movie) {
+                $("#movies").append("<li class='list-group-item'>" + movie.name + "</li>");
+
+                $("#movie").typeahead("val", "");
+
+                viewmodel.movieIds.push(movie.id);
+            });
+
+            
+            $.validator.addMethod("validCustomer", function () {
+                return viewmodel.customerId && viewmodel.customerId !== 0;
+            }, "Please select a valid customer.");
+
+            $.validator.addMethod("atLeastOneMovie", function () {
+                return viewmodel.movieIds.length > 0;
+            }, "Please select atleast 1 movie.");
+
+           var validator = $("#newRental").validate({
+                submitHandler: function () {
+
+                    $.ajax({
+                        url: "/api/newRentals",
+                        method: "post",
+                        data: viewmodel
+                    })
+                    .done(function () {
+                        toastr.success("Rental(s) Successfully Recorded.");
+
+                        $("#customer").typeahead("val", "");
+                        $("#movie").typeahead("val", "");
+                        $("#movies").empty();
+                        viewmodel = { movieIds: [] };
+                        validator.resetForm();
+
+                    })
+
+                    .fail(function () {
+                        toastr.error("Error: Something unexpected happened.");
+                    });
+
+                    return false;
+                }
+            });
+
+        });
+    </script>
+}

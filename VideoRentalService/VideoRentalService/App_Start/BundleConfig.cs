@@ -13,7 +13,9 @@ namespace VideoRentalService
                         "~/Scripts/bootbox.js",
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/DataTables/jquery.dataTables.js",
-                        "~/Scripts/DataTables/dataTables.bootstrap.js"
+                        "~/Scripts/DataTables/dataTables.bootstrap.js",
+                        "~/Scripts/toastr.js",
+                        "~/Scripts/typeahead.bundle.js"
                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -28,6 +30,8 @@ namespace VideoRentalService
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/DataTables/css/datatables.bootstrap.css",
+                      "~/Content/typeahead.css",
+                      "~/Content/toastr.css",
                       "~/Content/site.css"));
         }
     }

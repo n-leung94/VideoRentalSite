@@ -232,3 +232,5 @@ C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalSer
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.AddDrivingLicenseToApplicationUser.resources
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.addPhoneNumberToRegistration.resources
 C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.rollbackPhoneNumber.resources
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.addRentalToDb.resources
+C:\Users\Nick\Documents\GitHub\VideoRentalSite\VideoRentalService\VideoRentalService\obj\Debug\VideoRentalService.Migrations.addNumAvailableToMovie.resources

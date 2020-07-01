@@ -22,12 +22,29 @@ namespace VideoRentalService.Controllers.Api
 
         // Get list of all Movies
         // GET/api/Movies
-        public IEnumerable<MovieDto> GetMovies()
+        public IHttpActionResult GetMovies(string query = null)
         {
-            return _context.Movies
-                .Include(m => m.Genre)
+            var movieQuery = _context.Movies
+                .Include(m => m.Genre);
+
+            if (!string.IsNullOrWhiteSpace(query))
+                movieQuery = movieQuery.Where(m => m.Name.Contains(query) && m.NumberAvailable != 0);
+
+
+            var movieDtos = movieQuery
                 .ToList()
                 .Select(Mapper.Map<Movie, MovieDto>);
+
+            return Ok(movieDtos);
+
+            /*
+            return Ok(_context.Movies
+                .Include(m => m.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>));
+                */
+
+
         }
 
         // Get Movie by ID
