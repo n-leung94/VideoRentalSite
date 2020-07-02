@@ -23,18 +23,17 @@ namespace VideoRentalService.Controllers.Api
         [HttpGet]
         public IHttpActionResult GetRented ()
         {
-            var rentedOut = _context.Rentals.Include(r => r.Customer)
-                .Include(r => r.Movie)
-                .Where(r => r.DateReturned == null);
+            var rentalQuery = _context.Rentals
+                .Include(r => r.Customer)
+                .Include(r => r.Movie);
 
-            
-            var rentalDtos = rentedOut
+            rentalQuery = rentalQuery.Where(r => r.DateReturned == null);
+
+            var rentedDto = rentalQuery
                 .ToList()
                 .Select(Mapper.Map<Rental, ReturnRentalDto>);
-            
 
-
-            return Ok(rentalDtos);
+            return Ok(rentedDto);
         }
 
         [HttpPut]

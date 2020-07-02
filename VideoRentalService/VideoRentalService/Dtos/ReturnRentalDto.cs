@@ -11,11 +11,12 @@ namespace VideoRentalService.Dtos
     {
         public int Id { get; set; }
 
-        
-        public Customer Customer { get; set; }
+        public byte CustomerId { get; set; }
+        public CustomerDto Customer { get; set; }
 
-        
-        public Movie Movie { get; set; }
+
+        public byte MovieId { get; set; }
+        public MovieDto Movie { get; set; }
 
         public DateTime DateRented { get; set; }
 
