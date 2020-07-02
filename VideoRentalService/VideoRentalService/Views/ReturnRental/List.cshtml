@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Rented Videos</h2>
+<div>
+    <table id="rented" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Customer Name</th>
+                <th>Movie</th>
+                <th>Date Rented</th>
+                <th>Return</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $(rented).DataTable({
+                ajax: {
+                    url: "/api/returnrental",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    {
+                        data: "customer.name"
+                        
+                    },
+                    {
+                        data: "movie.name"
+                    },
+                    {
+                        data: "dateRented"
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-return-id=" + data + ">Return</button>"
+                        }
+                    }
+
+                ]
+
+
+            });
+
+            $("#rented").on("click", ".js-delete", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure you want to return this movie?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/returnrental/" + button.attr("data-return-id"),
+                            method: "PUT",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+
+                        });
+                    }
+
+                });
+
+            });
+
+        });
+    </script>
+
+
+
+
+}
+
