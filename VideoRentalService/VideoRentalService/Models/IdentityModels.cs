@@ -35,6 +35,10 @@ namespace VideoRentalService.Models
 
         public DbSet<Rental> Rentals { get; set; }
 
+        public DbSet<Enquiry> Enquiries { get; set; }
+
+        public DbSet<EnquiryType> EnquiryTypes { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

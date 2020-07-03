@@ -270,9 +270,19 @@
     <Compile Include="Migrations\202006300915568_addNumAvailableToMovie.Designer.cs">
       <DependentUpon>202006300915568_addNumAvailableToMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007030430103_EnquiryAndEnquiryTypeModels.cs" />
+    <Compile Include="Migrations\202007030430103_EnquiryAndEnquiryTypeModels.Designer.cs">
+      <DependentUpon>202007030430103_EnquiryAndEnquiryTypeModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007030434394_seedMembershipTypes.cs" />
+    <Compile Include="Migrations\202007030434394_seedMembershipTypes.Designer.cs">
+      <DependentUpon>202007030434394_seedMembershipTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Enquiry.cs" />
+    <Compile Include="Models\EnquiryType.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -612,6 +622,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006300915568_addNumAvailableToMovie.resx">
       <DependentUpon>202006300915568_addNumAvailableToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007030430103_EnquiryAndEnquiryTypeModels.resx">
+      <DependentUpon>202007030430103_EnquiryAndEnquiryTypeModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007030434394_seedMembershipTypes.resx">
+      <DependentUpon>202007030434394_seedMembershipTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
