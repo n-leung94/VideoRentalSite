@@ -183,10 +183,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
+    <Compile Include="Controllers\Api\EnquiryController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
     <Compile Include="Controllers\Api\NewRentalsController.cs" />
     <Compile Include="Controllers\Api\ReturnRentalController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\EnquiryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
@@ -194,6 +196,8 @@
     <Compile Include="Controllers\ReturnRentalController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
+    <Compile Include="Dtos\EnquiryDto.cs" />
+    <Compile Include="Dtos\EnquiryTypeDto.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
@@ -270,13 +274,13 @@
     <Compile Include="Migrations\202006300915568_addNumAvailableToMovie.Designer.cs">
       <DependentUpon>202006300915568_addNumAvailableToMovie.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007030430103_EnquiryAndEnquiryTypeModels.cs" />
-    <Compile Include="Migrations\202007030430103_EnquiryAndEnquiryTypeModels.Designer.cs">
-      <DependentUpon>202007030430103_EnquiryAndEnquiryTypeModels.cs</DependentUpon>
+    <Compile Include="Migrations\202007031306570_addEnquiryandEnquiryTypes.cs" />
+    <Compile Include="Migrations\202007031306570_addEnquiryandEnquiryTypes.Designer.cs">
+      <DependentUpon>202007031306570_addEnquiryandEnquiryTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007030434394_seedMembershipTypes.cs" />
-    <Compile Include="Migrations\202007030434394_seedMembershipTypes.Designer.cs">
-      <DependentUpon>202007030434394_seedMembershipTypes.cs</DependentUpon>
+    <Compile Include="Migrations\202007031309271_seedEnquiryTypes.cs" />
+    <Compile Include="Migrations\202007031309271_seedEnquiryTypes.Designer.cs">
+      <DependentUpon>202007031309271_seedEnquiryTypes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -554,6 +558,7 @@
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
     <Content Include="Views\Rentals\New.cshtml" />
     <Content Include="Views\ReturnRental\List.cshtml" />
+    <Content Include="Views\Enquiry\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -623,11 +628,11 @@
     <EmbeddedResource Include="Migrations\202006300915568_addNumAvailableToMovie.resx">
       <DependentUpon>202006300915568_addNumAvailableToMovie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007030430103_EnquiryAndEnquiryTypeModels.resx">
-      <DependentUpon>202007030430103_EnquiryAndEnquiryTypeModels.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007031306570_addEnquiryandEnquiryTypes.resx">
+      <DependentUpon>202007031306570_addEnquiryandEnquiryTypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007030434394_seedMembershipTypes.resx">
-      <DependentUpon>202007030434394_seedMembershipTypes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007031309271_seedEnquiryTypes.resx">
+      <DependentUpon>202007031309271_seedEnquiryTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -8,7 +8,7 @@ namespace VideoRentalService.Models
 {
     public class Enquiry
     {
-        public byte Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [EmailAddress]
@@ -31,7 +31,6 @@ namespace VideoRentalService.Models
         public DateTime DateSubmitted { get; set; }
 
         public DateTime? DateResolved { get; set; }
-
 
         
     }

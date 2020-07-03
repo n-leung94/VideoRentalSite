@@ -19,6 +19,7 @@ namespace VideoRentalService.App_Start
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
             Mapper.CreateMap<Genre, GenreDto>();
             Mapper.CreateMap<Rental, ReturnRentalDto>();
+            Mapper.CreateMap<EnquiryType, EnquiryTypeDto>();
         }
     }
 }

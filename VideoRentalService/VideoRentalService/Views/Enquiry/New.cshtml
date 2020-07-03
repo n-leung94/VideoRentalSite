@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Enquiry Form</h2>
+<form id="newEnquiry">
+    <div class="form-group">
+        <label>Email</label>
+        <div>
+            <input id="email" name="email" required type="text" value="" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Name</label>
+        <div>
+            <input id="name" name="name" required type="text" value="" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Enquiry Type</label>
+        <select id="selectEnquiryType" class="form-control">
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label>Message</label>
+        <div>
+            <textarea id="message" style="height:250px; width:650px;" minlength="50" class="form-control"></textarea>
+        </div>
+    </div>
+
+    <button class="btn btn-primary">Submit</button>
+</form>
+
+@section scripts
+{
+    @*Not part of lib, we only render it on pages we want validation in.*@
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+
+            var EnquiryTypes = [];
+
+
+
+            var getEnquiryTypes = function () {
+                $.ajax({
+                    url: "/api/enquiry",
+                    dataSrc: "",
+                    success: function (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            $('#selectEnquiryType').append('<option value=' + data[i].id + '>' + data[i].name + '</option>');
+                            console.log(data[i].name);
+
+                        }
+
+
+                    }
+                })
+
+            };
+
+            getEnquiryTypes();
+
+
+             var validator = $("#newEnquiry").validate({
+                 submitHandler: function () {
+
+                    var viewmodel = {};
+                    viewmodel.Email = $("#email").val();
+                    viewmodel.Name = $("#name").val();
+                    viewmodel.EnquiryTypeId = $("#selectEnquiryType").val();
+                    viewmodel.MessageField = $("#message").val();
+
+
+
+                    $.ajax({
+                        url: "/api/enquiry",
+                        method: "post",
+                        data: viewmodel
+                    })
+                    .done(function () {
+                        toastr.success("Enquiry Successfully Recorded.");
+
+                        $("#email").val('');
+                        $("#name").val('');
+                        $("#message").val('');
+                        viewmodel = {};
+                        validator.resetForm();
+
+                    })
+
+                    .fail(function () {
+                        toastr.error("Error: Something unexpected happened.");
+                    });
+
+                    return false;
+                }
+            });
+        });
+    </script>
+}
+
