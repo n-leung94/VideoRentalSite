@@ -20,6 +20,7 @@ namespace VideoRentalService.App_Start
             Mapper.CreateMap<Genre, GenreDto>();
             Mapper.CreateMap<Rental, ReturnRentalDto>();
             Mapper.CreateMap<EnquiryType, EnquiryTypeDto>();
+            Mapper.CreateMap<Enquiry, EnquiryManagerDto>();
         }
     }
 }

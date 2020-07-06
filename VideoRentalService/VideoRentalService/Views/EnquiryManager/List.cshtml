@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Unresolved Enquiries</h2>
+<div>
+    <table id="enquiries" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Enquiry Type</th>
+                <th>Date Submitted</th>
+                <th>Message</th>
+                <th>Resolve</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $(enquiries).DataTable({
+                ajax: {
+                    url: "/api/enquirymanager",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    {
+                        data: "name"
+
+                    },
+                    {
+                        data: "email"
+                    },
+                    {
+                        data: "enquiryType.name"
+                    },
+                    {
+                        data: "dateSubmitted"
+                    },
+                    {
+                        data: "messageField",
+                        render: function (data) {
+                            return "<button class='btn-link js-viewmsg' data-msg='" + data + "'>View Message</button>"
+                        }
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-resolve' data-resolve-id=" + data + ">Resolve</button>"
+                        }
+                    }
+
+                ]
+
+
+            });
+
+            $("#enquiries").on("click", ".js-resolve", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure you want to mark this enquiry as resolved?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/enquirymanager/" + button.attr("data-resolve-id"),
+                            method: "PUT",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+
+                        });
+                    }
+
+                });
+
+            });
+
+            $("#enquiries").on("click", ".js-viewmsg", function () {
+                var viewMsgBtn = $(this);
+
+                bootbox.alert(viewMsgBtn.attr("data-msg"));
+
+            });
+
+
+
+        });
+    </script>
+
+
+
+
+}
+

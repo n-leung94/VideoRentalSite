@@ -184,11 +184,13 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\Api\EnquiryController.cs" />
+    <Compile Include="Controllers\Api\EnquiryManagerController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
     <Compile Include="Controllers\Api\NewRentalsController.cs" />
     <Compile Include="Controllers\Api\ReturnRentalController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\EnquiryController.cs" />
+    <Compile Include="Controllers\EnquiryManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
@@ -197,6 +199,7 @@
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\EnquiryDto.cs" />
+    <Compile Include="Dtos\EnquiryManagerDto.cs" />
     <Compile Include="Dtos\EnquiryTypeDto.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
@@ -559,6 +562,7 @@
     <Content Include="Views\Rentals\New.cshtml" />
     <Content Include="Views\ReturnRental\List.cshtml" />
     <Content Include="Views\Enquiry\New.cshtml" />
+    <Content Include="Views\EnquiryManager\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
