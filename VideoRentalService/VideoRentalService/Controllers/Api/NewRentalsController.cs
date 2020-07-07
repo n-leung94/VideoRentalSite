@@ -20,6 +20,7 @@ namespace VideoRentalService.Controllers.Api
         }
 
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult CreateNewRentals(NewRentalDto newRental)
         {
 

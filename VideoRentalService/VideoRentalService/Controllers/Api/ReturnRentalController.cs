@@ -11,6 +11,7 @@ using System.Data.Entity;
 
 namespace VideoRentalService.Controllers.Api
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class ReturnRentalController : ApiController
     {
         private ApplicationDbContext _context;

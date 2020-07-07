@@ -14,6 +14,7 @@ using System.Data.Entity;
 
 namespace VideoRentalService.Controllers.Api
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class CustomersController : ApiController
     {
         private ApplicationDbContext _context;
@@ -23,7 +24,7 @@ namespace VideoRentalService.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        
+
         // For AutoComplete Purposes
         public IHttpActionResult GetCustomers(string query = null)
         {         

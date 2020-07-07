@@ -14,14 +14,5 @@ namespace VideoRentalService.Controllers
             return View();
         }
 
-        public ActionResult List()
-        {
-            return View();
-        }
-
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
     }
 }

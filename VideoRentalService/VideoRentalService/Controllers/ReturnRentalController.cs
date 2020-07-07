@@ -7,10 +7,11 @@ using VideoRentalService.Models;
 
 namespace VideoRentalService.Controllers
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class ReturnRentalController : Controller
     {
         // GET: ReturnRental
-        [Authorize(Roles = RoleName.CanManageMovies)]
+        
         public ActionResult List()
         {
             return View();

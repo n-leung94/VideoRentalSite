@@ -9,6 +9,7 @@ using System.Data.Entity;
 
 namespace VideoRentalService.Controllers
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class CustomersController : Controller
     {
         // To initialise Database Object
@@ -25,6 +26,7 @@ namespace VideoRentalService.Controllers
         {
             _context.Dispose();
         }
+
 
         public ActionResult New()
         {

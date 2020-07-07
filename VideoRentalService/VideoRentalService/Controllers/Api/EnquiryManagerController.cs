@@ -12,9 +12,11 @@ using AutoMapper;
 
 namespace VideoRentalService.Controllers.Api
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class EnquiryManagerController : ApiController
     {
         private ApplicationDbContext _context;
+
 
         public EnquiryManagerController()
         {
@@ -44,6 +46,7 @@ namespace VideoRentalService.Controllers.Api
 
             return Ok(Mapper.Map<Enquiry, EnquiryManagerDto>(enquiry));
         }
+
 
         [HttpPut]
         public IHttpActionResult ResolveEnquiry(int id)

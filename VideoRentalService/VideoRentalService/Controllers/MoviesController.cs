@@ -116,8 +116,6 @@ namespace VideoRentalService.Controllers
             return RedirectToAction("Index", "Movies");
         }
 
-        // Movies
-        // ? means nullable
         public ActionResult Index()
         {
             if (User.IsInRole(RoleName.CanManageMovies))
