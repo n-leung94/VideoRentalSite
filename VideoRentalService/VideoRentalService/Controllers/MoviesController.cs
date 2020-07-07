@@ -18,40 +18,8 @@ namespace VideoRentalService.Controllers
             _context = new ApplicationDbContext();
         }
 
-        // GET: Movies/Random in URL
-        public ActionResult Random()
-        {
-            var movie = new Movie() { Name = "Shrek !" };
 
-            var customers = new List<Customer>
-            {
-                new Customer {Name = "Customer 1"},
-                new Customer {Name = "Customer 2"}
-            };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-
-            };
-
-            return View(viewModel); // Must add Random.cshtml under Movies folder in Views
-            // return Content("Hello World");
-            // return HttpNotFound();
-            // return new EmptyResult();
-            // return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name"});
-        }
-
-        //                             Constraint to 4 digits, between num range of 1 and 12
-        [Route("movies/released/{year}/{month:regex(\\d{4}):range(1, 12)}")]
-        public ActionResult ByReleaseDate(int year, int month)
-        {
-            return Content(year + "/" + month);
-        }
-
-
-        // GET: Movies/edit/id arg
+        // Edit a Movie
         [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
@@ -126,6 +94,7 @@ namespace VideoRentalService.Controllers
                 return View("ReadOnlyList");
         }
 
+        // Returns details of a specific movie
         public ActionResult Details(int id)
         {
             var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(c => c.Id == id);

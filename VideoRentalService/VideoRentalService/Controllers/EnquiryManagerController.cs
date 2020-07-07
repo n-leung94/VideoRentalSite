@@ -10,7 +10,7 @@ namespace VideoRentalService.Controllers
     [Authorize(Roles = RoleName.CanManageMovies)]
     public class EnquiryManagerController : Controller
     {
-        // GET: EnquiryManager
+        // Returns a view with List of Unresolved Queries
         public ActionResult List()
         {
             return View();

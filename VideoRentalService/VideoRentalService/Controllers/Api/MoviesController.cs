@@ -55,6 +55,7 @@ namespace VideoRentalService.Controllers.Api
         }
 
         // Create a movie
+        // POST api/Movies/
         [HttpPost]
         [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult CreateMovie(MovieDto movieDto)
@@ -83,6 +84,7 @@ namespace VideoRentalService.Controllers.Api
 
 
         // Update a Movie
+        // PUT api/Movies
         [HttpPut]
         [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)
@@ -103,6 +105,7 @@ namespace VideoRentalService.Controllers.Api
         }
 
         // Delete a Movie
+        // DELETE api/Movies
         [HttpDelete]
         [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult DeleteMovie(int id)

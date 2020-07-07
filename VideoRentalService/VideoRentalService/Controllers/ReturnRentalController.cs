@@ -10,8 +10,7 @@ namespace VideoRentalService.Controllers
     [Authorize(Roles = RoleName.CanManageMovies)]
     public class ReturnRentalController : Controller
     {
-        // GET: ReturnRental
-        
+        // Returns List of unreturned rentals      
         public ActionResult List()
         {
             return View();

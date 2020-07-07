@@ -20,6 +20,8 @@ namespace VideoRentalService.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
+        // Returns all the possible Enquiry Types
+        // GET /api/Enquiry
         [HttpGet]
         public IHttpActionResult GetEnquiryTypes()
         {
@@ -32,6 +34,8 @@ namespace VideoRentalService.Controllers.Api
 
         }
 
+        // Registers a new Enquiry to the db based on the form submitted from /Views/Enquiry/New
+        // POST /api/Enquiry
         [HttpPost]
         public IHttpActionResult SubmitEnquiryForm(EnquiryDto enquiryDto)
         {

@@ -10,7 +10,7 @@ namespace VideoRentalService.Controllers
     [Authorize(Roles = RoleName.CanManageMovies)]
     public class RentalsController : Controller
     {
-        
+        // Returns a New Rental Form
         public ActionResult New()
         {
             return View();

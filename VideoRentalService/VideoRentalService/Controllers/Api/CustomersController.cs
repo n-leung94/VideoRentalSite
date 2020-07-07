@@ -25,7 +25,7 @@ namespace VideoRentalService.Controllers.Api
         }
 
 
-        // For AutoComplete Purposes
+        // For AutoComplete Purposes and List Querying
         public IHttpActionResult GetCustomers(string query = null)
         {         
 

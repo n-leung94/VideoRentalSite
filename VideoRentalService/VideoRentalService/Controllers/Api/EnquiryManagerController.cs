@@ -23,6 +23,8 @@ namespace VideoRentalService.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
+        // GET /api/EnquiryManager
+        // Returns all unresolved enquiries by filtering DB based on enquiries with no resolved dates.
         public IHttpActionResult GetEnquiries()
         {
             var enquiries = _context.Enquiries
@@ -37,6 +39,8 @@ namespace VideoRentalService.Controllers.Api
             return Ok(EnquiryManagerDto);
         }
 
+        // GET /api/EnquiryManager/{id}
+        // Returns a query entry based on id provided.
         public IHttpActionResult GetEnquiries(int id)
         {
             var enquiry = _context.Enquiries.SingleOrDefault(e => e.Id == id);
@@ -47,7 +51,8 @@ namespace VideoRentalService.Controllers.Api
             return Ok(Mapper.Map<Enquiry, EnquiryManagerDto>(enquiry));
         }
 
-
+        // PUT /api/EnquiryManager/{id}
+        // Marks a specific enquiry based on ID as resolved by adding a timestamp.
         [HttpPut]
         public IHttpActionResult ResolveEnquiry(int id)
         {

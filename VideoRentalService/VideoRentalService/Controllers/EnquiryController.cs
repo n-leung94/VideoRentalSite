@@ -7,8 +7,8 @@ using System.Web.Mvc;
 namespace VideoRentalService.Controllers
 {
     public class EnquiryController : Controller
-    {
-        // GET: Enquiry
+    {       
+        // Returns a new Enquiry Form
         [AllowAnonymous]
         public ActionResult New()
         {

@@ -21,6 +21,8 @@ namespace VideoRentalService.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
+        // GET /api/ReturnRental
+        // Returns all unreturned rentals by filtering based on entries with no DateReturned.
         [HttpGet]
         public IHttpActionResult GetRented ()
         {
@@ -37,6 +39,8 @@ namespace VideoRentalService.Controllers.Api
             return Ok(rentedDto);
         }
 
+        // PUT /api/ReturnRental/id
+        // Marks a rental by id as returned by adding a timestamp to the DateReturned field
         [HttpPut]
         public IHttpActionResult Return (int id)
         {

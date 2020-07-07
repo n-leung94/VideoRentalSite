@@ -19,6 +19,8 @@ namespace VideoRentalService.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
+        // POST api/NewRentals/
+        // Create a new rental from the form posted from Views/Rentals/New
         [HttpPost]
         [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult CreateNewRentals(NewRentalDto newRental)

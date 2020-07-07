@@ -38,16 +38,14 @@ namespace VideoRentalService.Controllers
                 Customer = new Customer(),
                 MembershipTypes = membershipTypes
             };
-            // While we could pass membership types to return View() it won't work when editing a customer later as we also need to reference customer object
-            // We need to make a View Model that encapsulate both properties.
 
             return View("CustomerForm", viewModel); // By default C# would look for a View called new, the string arg is to override what to look for.
         }
 
         
-        [HttpPost]  // Ensure this action can only be done from HttpPost instead of get
+        [HttpPost]  
         [ValidateAntiForgeryToken] // Prevents Cross Site Attacks, Enable it on respective forms using @Html.AntiForgeryToken()
-        public ActionResult Save(Customer customer) // customer as an argument that will be passed to this action once a user keys in a new customer for processing, C# knows how to process the parameters from the form to single customer class rather than the view model.
+        public ActionResult Save(Customer customer) 
         {
             // If user input on the form is invalid, throw back form with existing details filled in
             if (!ModelState.IsValid)
@@ -61,7 +59,7 @@ namespace VideoRentalService.Controllers
                 return View("CustomerForm", viewModel);
             }
 
-            // Since this action can either be called from New Customer or Edit Customer as they are using same Form View, we need to differentiate.
+            // Since this action can either be called from New Customer or Edit Customer as they are using shared Form View, we need to differentiate.
             if (customer.Id == 0)
             {
                 _context.Customers.Add(customer);
@@ -84,7 +82,7 @@ namespace VideoRentalService.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            // var customers = _context.Customers.Include(c => c.MembershipType).ToList();  // Fetches all customers in DB as list , Include Statement is needed as Membership Type is a different data object "Eager Loading", DEPRECATED
+            
             return View();
         }
 
