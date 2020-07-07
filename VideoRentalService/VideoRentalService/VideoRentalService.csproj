@@ -306,6 +306,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.html" />
+    <Content Include="Content\bootstrap-lumen-3.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -563,6 +564,7 @@
     <Content Include="Views\ReturnRental\List.cshtml" />
     <Content Include="Views\Enquiry\New.cshtml" />
     <Content Include="Views\EnquiryManager\List.cshtml" />
+    <Content Include="Views\Shared\_NavBarStaff.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

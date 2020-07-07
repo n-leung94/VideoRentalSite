@@ -28,7 +28,7 @@ namespace VideoRentalService
 
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-lumen-3.css",
                       "~/Content/DataTables/css/datatables.bootstrap.css",
                       "~/Content/typeahead.css",
                       "~/Content/toastr.css",

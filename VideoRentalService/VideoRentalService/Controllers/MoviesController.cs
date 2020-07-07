@@ -116,6 +116,7 @@ namespace VideoRentalService.Controllers
             return RedirectToAction("Index", "Movies");
         }
 
+        [AllowAnonymous]
         public ActionResult Index()
         {
             if (User.IsInRole(RoleName.CanManageMovies))

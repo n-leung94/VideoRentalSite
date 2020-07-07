@@ -9,6 +9,7 @@ namespace VideoRentalService.Controllers
     public class EnquiryController : Controller
     {
         // GET: Enquiry
+        [AllowAnonymous]
         public ActionResult New()
         {
             return View();
